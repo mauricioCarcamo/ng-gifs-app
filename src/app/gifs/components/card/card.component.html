@@ -1,0 +1,15 @@
+    <div class="text-center card mb-2 bg-dark">
+        <img 
+            [src]="gif.images.downsized_medium.url" 
+            [alt]="gif.title" 
+            class="card-img-top"
+        >
+        <shared-lazy-image class="text-white"></shared-lazy-image>
+
+        <div class="card-body text-white">
+            <p *ngIf="gif.title !== ''; else noTitle" class="card-text"> {{ gif.title }} </p>
+            <ng-template #noTitle>
+                <p class="card-text" >No title</p>
+            </ng-template>
+        </div>
+    </div>
