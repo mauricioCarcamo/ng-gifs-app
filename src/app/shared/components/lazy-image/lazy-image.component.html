@@ -1,1 +1,17 @@
-<p>lazy-image works!</p>
+<div class="d-flex justify-content-center">
+  
+    <img 
+        [src]="url" 
+        [alt]="alt" 
+        class="card-img-top animate__animated animate__fadeIn" 
+        [ngStyle]="{ display: hasLoad ? '' : 'none' }"
+        (load)="onLoad()"
+    />
+
+    <img  
+        *ngIf="!hasLoad"
+        class="my-5"
+        src="assets/tailSpin.svg"   
+        alt=""
+    >
+</div>
